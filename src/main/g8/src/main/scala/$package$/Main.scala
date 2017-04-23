@@ -1,4 +1,4 @@
-package io.github.yeghishe
+package $package$
 
 import akka.actor.ActorSystem
 import akka.event.Logging

@@ -1,12 +1,10 @@
-package io.github
-
 import akka.event.LoggingAdapter
 import akka.http.scaladsl.server.Route
 import de.heikoseeberger.akkahttpcirce.CirceSupport
 
 import scala.concurrent.ExecutionContext
 
-package object yeghishe {
+package object $package$ {
   trait BaseComponent extends Config {
     protected implicit def log: LoggingAdapter
     protected implicit def executor: ExecutionContext

@@ -1,4 +1,4 @@
-package io.github.yeghishe
+package $package$
 
 import akka.http.scaladsl.model.StatusCodes
 
