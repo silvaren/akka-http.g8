@@ -1,10 +1,22 @@
 package $package$
 
 import akka.actor.ActorSystem
-import akka.event.Logging
+import akka.event.{Logging, LoggingAdapter}
 import akka.http.scaladsl.Http
 import akka.http.scaladsl.server.{Directives, Route}
 import akka.stream.ActorMaterializer
+import de.heikoseeberger.akkahttpcirce.CirceSupport
+
+import scala.concurrent.ExecutionContext
+
+trait BaseComponent extends Config {
+  protected implicit def log: LoggingAdapter
+  protected implicit def executor: ExecutionContext
+}
+
+trait BaseService extends BaseComponent with CirceSupport {
+  protected def routes: Route
+}
 
 object Main extends App with Config with Services {
   implicit val system       = ActorSystem()
